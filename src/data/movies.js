@@ -31,6 +31,21 @@ export const newReleaseMovies = [
   { id: 5, title: 'Missing Person', image: img.missingpersonCard },
 ]
 
+export const myListMovies = [
+  { id: 1, title: 'All of Us Are Dead', image: img.allofusaredeadCard, newEpisode: true, top10: true },
+  { id: 2, title: 'Baymax!', image: img.baymaxCard },
+  { id: 3, title: 'Missing Person', image: img.missingpersonCard, newEpisode: true },
+  { id: 4, title: 'Ant-Man Quantumania', image: img.antmanCard, newEpisode: true },
+  { id: 5, title: 'Ted Lasso', image: img.tedLassoCard, newEpisode: true, top10: true },
+  { id: 6, title: 'Duty After School', image: img.dutyafterschoolCard, newEpisode: true },
+  { id: 7, title: 'Suzume', image: img.suzumeCard, top10: true },
+  { id: 8, title: 'Guardians of the Galaxy', image: img.noobleaderCard, top10: true },
+  { id: 9, title: 'Spider-Man: Across the Spider-Verse', image: img.spidermultiCard },
+  { id: 10, title: 'Sonic 2', image: img.ilikethewayyoumakeitCard },
+  { id: 11, title: 'M3GAN', image: img.meganCard },
+  { id: 12, title: 'A Man Called Otto', image: img.ottoCard },
+]
+
 export const featuredMovie = {
   title: 'Duty After School',
   description:

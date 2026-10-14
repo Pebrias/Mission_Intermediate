@@ -1,0 +1,111 @@
+.movie-grid {
+  padding: 20px 20px 40px;
+}
+
+.movie-grid__title {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 120%;
+  margin-bottom: 16px;
+}
+
+.movie-grid__empty {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.movie-grid__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.movie-grid__card {
+  position: relative;
+  aspect-ratio: 148 / 214;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.movie-grid__poster {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.2s;
+}
+
+.movie-grid__card:hover .movie-grid__poster {
+  transform: scale(1.04);
+}
+
+.movie-grid__badge {
+  position: absolute;
+  height: auto;
+}
+
+.movie-grid__badge--new {
+  top: 6px;
+  left: 6px;
+  width: 52px;
+}
+
+.movie-grid__badge--top {
+  top: 0;
+  right: 6px;
+  width: 28px;
+}
+
+.movie-grid__remove {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  width: 26px;
+  height: 26px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s, background 0.2s;
+}
+
+.movie-grid__card:hover .movie-grid__remove,
+.movie-grid__remove:focus-visible {
+  opacity: 1;
+}
+
+.movie-grid__remove:hover {
+  background: #c1121f;
+}
+
+@media (min-width: 768px) {
+  .movie-grid {
+    padding: 40px 80px 80px;
+  }
+
+  .movie-grid__title {
+    font-size: 32px;
+    line-height: 110%;
+    margin-bottom: 32px;
+  }
+
+  .movie-grid__list {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 16px;
+  }
+
+  .movie-grid__badge--new {
+    top: 8px;
+    left: 8px;
+    width: 64px;
+  }
+
+  .movie-grid__badge--top {
+    right: 8px;
+    width: 40px;
+  }
+}

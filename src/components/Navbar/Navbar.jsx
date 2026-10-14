@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { logo, logoIcon, akunIcon, dropdownIcon, profileIcon, subscirptionIcon, exitIcon } from '../../assets/images'
 import './Navbar.css'
@@ -6,7 +6,7 @@ import './Navbar.css'
 const defaultLinks = [
   { label: 'Series', to: '#' },
   { label: 'Film', to: '#' },
-  { label: 'Daftar Saya', to: '#' },
+  { label: 'Daftar Saya', to: '/daftar-saya' },
 ]
 
 const defaultMenu = [
@@ -17,6 +17,23 @@ const defaultMenu = [
 
 function Navbar({ links = defaultLinks, menuItems = defaultMenu }) {
   const [open, setOpen] = useState(false)
+  const profileRef = useRef(null)
+
+  useEffect(() => {
+    if (!open) return
+    const handleClick = (e) => {
+      if (profileRef.current && !profileRef.current.contains(e.target)) setOpen(false)
+    }
+    const handleKey = (e) => {
+      if (e.key === 'Escape') setOpen(false)
+    }
+    document.addEventListener('mousedown', handleClick)
+    document.addEventListener('keydown', handleKey)
+    return () => {
+      document.removeEventListener('mousedown', handleClick)
+      document.removeEventListener('keydown', handleKey)
+    }
+  }, [open])
 
   return (
     <header className="navbar">
@@ -32,7 +49,7 @@ function Navbar({ links = defaultLinks, menuItems = defaultMenu }) {
         ))}
       </nav>
 
-      <div className="navbar__profile">
+      <div className="navbar__profile" ref={profileRef}>
         <img className="navbar__avatar" src={akunIcon} alt="Akun Saya" />
         <button
           type="button"
