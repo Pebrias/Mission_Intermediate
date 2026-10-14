@@ -1,0 +1,96 @@
+.movie-section__title {
+  padding: 20px;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 120%;
+}
+
+.movie-section__row {
+  display: flex;
+  gap: 16px;
+  padding: 0 20px 8px;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  scrollbar-width: thin;
+}
+
+.movie-section__card {
+  position: relative;
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+}
+
+.movie-section__poster {
+  display: block;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.2s;
+}
+
+.movie-section__card:hover .movie-section__poster {
+  transform: scale(1.03);
+}
+
+.movie-section__row--landscape .movie-section__poster {
+  width: 309px;
+  height: 151px;
+}
+
+.movie-section__row--portrait .movie-section__poster {
+  width: 95px;
+  height: 144px;
+}
+
+.movie-section__badge {
+  position: absolute;
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .movie-section__title {
+    padding: 80px 40px 32px;
+    font-size: 32px;
+    line-height: 110%;
+  }
+
+  .movie-section__row {
+    padding: 0 40px 8px;
+  }
+
+  .movie-section__row--landscape {
+    gap: 24px;
+  }
+
+  .movie-section__row--portrait {
+    gap: 28px;
+  }
+
+  .movie-section__row--landscape .movie-section__poster {
+    width: 302px;
+    height: 162px;
+  }
+
+  .movie-section__row--portrait .movie-section__poster {
+    width: 234px;
+    height: 365px;
+  }
+
+  .movie-section__badge {
+    display: block;
+  }
+
+  .movie-section__badge--new {
+    top: 8px;
+    left: 8px;
+    width: 60px;
+    height: auto;
+  }
+
+  .movie-section__badge--top {
+    top: 0;
+    right: 8px;
+    width: 40px;
+    height: auto;
+  }
+}
